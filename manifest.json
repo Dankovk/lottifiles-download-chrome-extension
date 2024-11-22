@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "name": "Lottie Converter",
+    "version": "1.0",
+    "description": "Converts .lottie files to JSON from <dotlottie-player> elements.",
+    "permissions": ["downloads", "scripting", "activeTab"],
+    "host_permissions": ["<all_urls>"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["lib/libs.js", "lib/worker.js", "contentScript.js"]
+      }
+    ]
+  }
